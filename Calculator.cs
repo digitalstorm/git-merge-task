@@ -12,14 +12,10 @@ namespace Kontur.Courses.Git
 				return lastResult = double.Parse(args[0]);
 			if (args.Length == 2)
 			{
-				// Если не хватает первого аргумента, то использовать lastResult
-				// Должно работать так:
-				// 2 + 2
-				//> 4
-				// + 1
-				//>5
-				return lastResult = Maybe<double>.FromError("Not implemented yet");
-			}
+			    var v1 = lastResult.HasValue ? lastResult.Value : 0;
+                var v2 = double.Parse(args[1]);
+                return lastResult = Execute(args[0], v1, v2);
+            }
 			if (args.Length == 3)
 			{
 				var v1 = double.Parse(args[0]);
