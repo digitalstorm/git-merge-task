@@ -1,5 +1,6 @@
 namespace Kontur.Courses.Git
 {
+	// change
 	public class Calculator
 	{
 		private Maybe<double> lastResult = 0;
